@@ -69,4 +69,17 @@ public class Tiles implements State {
 		newTiles[newEmptyTileRow * width + newEmptyTileColumn] = EMPTY_TILE;
 		return new Tiles(width, newTiles, newEmptyTileRow, newEmptyTileColumn);
 	}
+	public boolean equals(Object that) {
+		if (that instanceof Tiles) {
+			Tiles thatTiles = (Tiles)that;
+			return this.width == thatTiles.width &&
+					this.emptyTileRow == thatTiles.emptyTileRow &&
+					this.emptyTileColumn == thatTiles.emptyTileColumn &&
+					java.util.Arrays.equals(this.tiles, thatTiles.tiles);
+		}
+		return false;
+	}
+	public int hashCode() {
+		return width + emptyTileRow + emptyTileColumn + java.util.Arrays.hashCode(tiles);
+	}
 }

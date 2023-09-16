@@ -4,24 +4,26 @@ import java.util.Stack;
 
 public class DepthFirstFrontier implements Frontier {
     public Stack<Node> stack = new Stack<Node>();
+    private Integer maxNodes = 0;
 
     public void add(Node node) {
         stack.add(node);
+        maxNodes = Math.max(maxNodes, stack.size());
     }
 
-    public void remove(Node node) {
-        stack.remove(node);
+    public Node remove() {
+        return stack.pop();
     }
 
     public boolean isEmpty() {
         return stack.isEmpty();
     }
 
-    public boolean contains(Node node) {
-        return stack.contains(node);
-    }
-
     public void clear() {
         stack.clear();
+    }
+
+    public Integer maxNodes() {
+        return maxNodes;
     }
 }

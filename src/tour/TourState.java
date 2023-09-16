@@ -28,4 +28,15 @@ public class TourState implements State {
 		newVisitedCities.add(road.targetCity);
 		return new TourState(newVisitedCities, road.targetCity);
 	}
+	public boolean equals(Object that) {
+		if (that instanceof TourState) {
+			TourState thatState = (TourState)that;
+			return this.visitedCities.equals(thatState.visitedCities) &&
+					this.currentCity.equals(thatState.currentCity);
+		}
+		return false;
+	}
+	public int hashCode() {
+		return visitedCities.hashCode() + currentCity.hashCode();
+	}
 }
