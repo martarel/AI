@@ -4,7 +4,7 @@ import java.util.Set;
 import java.util.HashSet;
 
 
-class GraphSearch implements Search {
+public class GraphSearch implements Search {
     private Frontier frontier;
     private Integer nodesExpanded = 0;
 

@@ -21,6 +21,7 @@ public class DepthFirstFrontier implements Frontier {
 
     public void clear() {
         stack.clear();
+        maxNodes = 0;
     }
 
     public Integer maxNodes() {

@@ -22,6 +22,7 @@ public class BreadthFirstFrontier implements Frontier {
 
     public void clear() {
         queue.clear();
+        maxNodes = 0;
     }
 
     public Integer maxNodes() {

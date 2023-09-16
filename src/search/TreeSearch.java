@@ -1,6 +1,6 @@
 package search;
 
-class TreeSearch implements Search {
+public class TreeSearch implements Search {
     private Frontier frontier;
     private Integer nodesExpanded = 0;
 
