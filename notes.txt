@@ -1,0 +1,38 @@
+First Practical
+
+Results
+    NPuzzle
+        BFS Tree Search
+        Number of nodes expanded 824404
+        Maximum number of nodes in frontier 1473871
+
+        DFS Tree Search
+        Did not finish within 10 minutes - got stuck in a loop
+
+        BFS Graph Search
+        Number of nodes expanded 2768
+        Maximum number of nodes in frontier 1592
+
+        DFS Graph Search
+        Number of nodes expanded 19787
+        Maximum number of nodes in frontier 14480
+
+    Tour
+        BFS Tree Search
+        Number of nodes expanded 31757
+        Maximum number of nodes in frontier 44217
+
+        DFS Tree Search
+        Did not finish within 10 minutes - got stuck in a loop
+
+        BFS Graph Search
+        Number of nodes expanded 881
+        Maximum number of nodes in frontier 186
+
+        DFS Graph Search
+        Number of nodes expanded 47
+        Maximum number of nodes in frontier 19
+        
+        Iterative Deepening Search
+        Number of nodes expanded 2
+        Maximum number of nodes in frontier 3

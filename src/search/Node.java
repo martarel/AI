@@ -4,10 +4,27 @@ public class Node {
 	public final Node parent;
 	public final Action action;
 	public final State state;
-	
+	public int depth = 0;
+	public int cost = 0;
+
 	public Node(Node parent, Action action, State state) {
 		this.parent = parent;
 		this.action = action;
 		this.state = state;
+	}
+
+	public Node(Node parent, Action action, State state, int depth){
+		this.parent = parent;
+		this.action = action;
+		this.state = state;
+		this.depth = depth;
+	}
+
+	public Node(Node parent, Action action, State state, int depth, int cost){
+		this.parent = parent;
+		this.action = action;
+		this.state = state;
+		this.depth = depth;
+		this.cost = cost;
 	}
 }

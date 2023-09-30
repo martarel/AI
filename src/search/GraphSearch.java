@@ -6,7 +6,7 @@ import java.util.HashSet;
 
 public class GraphSearch implements Search {
     private Frontier frontier;
-    private Integer nodesExpanded = 0;
+    private int nodesExpanded = 0;
 
     public GraphSearch(Frontier frontier) {
         this.frontier = frontier;
@@ -14,12 +14,11 @@ public class GraphSearch implements Search {
 
     public Node findSolution(Node rootNode, GoalTest goalTest) {
         frontier.clear();
-        nodesExpanded = 0;
+        nodesExpanded = 1;
         frontier.add(rootNode);
         Set<State> visited = new HashSet<>();
         visited.add(rootNode.state);
         while (!frontier.isEmpty()) {
-            nodesExpanded++;
             Node node = frontier.remove();
             if (goalTest.isGoal(node.state)) {
                 return node;
@@ -27,6 +26,7 @@ public class GraphSearch implements Search {
                 for (Action action : node.state.getApplicableActions()) {
                     State newState = node.state.getActionResult(action);
                     if (!visited.contains(newState)) {
+                        nodesExpanded++;
                         visited.add(newState);
                         frontier.add(new Node(node, action, newState));
                     }
@@ -36,7 +36,7 @@ public class GraphSearch implements Search {
         return null;
     }
 
-    public Integer numberOfNodesExpanded() {
+    public int numberOfNodesExpanded() {
         return nodesExpanded;
     }
 }

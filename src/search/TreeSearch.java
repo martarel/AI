@@ -2,7 +2,7 @@ package search;
 
 public class TreeSearch implements Search {
     private Frontier frontier;
-    private Integer nodesExpanded = 0;
+    private int nodesExpanded = 0;
 
     public TreeSearch(Frontier frontier) {
         this.frontier = frontier;
@@ -10,16 +10,16 @@ public class TreeSearch implements Search {
 
     public Node findSolution(Node rootNode, GoalTest goalTest) {
         frontier.clear();
-        nodesExpanded = 0;
+        nodesExpanded = 1;
         frontier.add(rootNode);
         while (!frontier.isEmpty()) {
-            nodesExpanded++;
             Node node = frontier.remove();
             if (goalTest.isGoal(node.state)) {
                 return node;
             } else {
                 for (Action action : node.state.getApplicableActions()) {
                     State newState = node.state.getActionResult(action);
+                    nodesExpanded++;
                     frontier.add(new Node(node, action, newState));
                 }
             }
@@ -27,7 +27,7 @@ public class TreeSearch implements Search {
         return null;
     }
 
-    public Integer numberOfNodesExpanded() {
+    public int numberOfNodesExpanded() {
         return nodesExpanded;
     }
 }

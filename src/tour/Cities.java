@@ -19,7 +19,7 @@ public class Cities {
 		City city2 = getStateCreateIfMissing(city2Name);
 		city1.outgoingRoads.add(new Road(city1, city2, distance));
 		city2.outgoingRoads.add(new Road(city2, city1, distance));
-	}
+	}  
 	protected City getStateCreateIfMissing(String cityName) {
 		City inCity = citiesByName.get(cityName);
 		if (inCity == null) {

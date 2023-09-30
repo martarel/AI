@@ -8,6 +8,10 @@ public enum Movement implements Action {
 	public final int deltaRow;
 	public final int deltaColumn;
 	
+	public int cost() {
+		return 1;
+	}
+	
 	private Movement(int deltaRow, int deltaColumn) {
 		this.deltaRow = deltaRow;
 		this.deltaColumn = deltaColumn;

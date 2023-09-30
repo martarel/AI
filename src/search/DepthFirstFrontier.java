@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class DepthFirstFrontier implements Frontier {
     public Stack<Node> stack = new Stack<Node>();
-    private Integer maxNodes = 0;
+    private int maxNodes = 0;
 
     public void add(Node node) {
         stack.add(node);
@@ -24,7 +24,7 @@ public class DepthFirstFrontier implements Frontier {
         maxNodes = 0;
     }
 
-    public Integer maxNodes() {
+    public int maxNodes() {
         return maxNodes;
     }
 }

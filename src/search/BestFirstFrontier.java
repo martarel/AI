@@ -1,19 +1,25 @@
 package search;
 
-import java.util.Queue;
-import java.util.LinkedList;
+import java.util.PriorityQueue;
 
-public class BreadthFirstFrontier implements Frontier {
-    public Queue<Node> queue = new LinkedList<Node>();
+
+public class BestFirstFrontier implements Frontier {
+    public PriorityQueue<Node> queue = new PriorityQueue<Node>();
+    private NodeFunction f;
     private int maxNodes = 0;
 
+    public BestFirstFrontier(NodeFunction f) {
+        this.f = f;
+    }
+
     public void add(Node node) {
+        node.cost = f.value(node);
         queue.add(node);
         maxNodes = Math.max(maxNodes, queue.size());
     }
 
     public Node remove() {
-        return queue.remove();
+        return queue.pop();
     }
 
     public boolean isEmpty() {
@@ -29,3 +35,4 @@ public class BreadthFirstFrontier implements Frontier {
         return maxNodes;
     }
 }
+
