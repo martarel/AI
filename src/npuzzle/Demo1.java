@@ -35,7 +35,7 @@ public class Demo1 {
         System.out.println("Maximum number of nodes in frontier " + BFSfrontier.maxNodes());
 
         System.out.println("Running DFS Tree Search...");
-        //solution = treeSearchDFS.findSolution(startNode, goalTest);
+        solution = treeSearchDFS.findSolution(startNode, goalTest);
         //printer.printSolution(solution);
         System.out.println("Number of nodes expanded " + treeSearchDFS.numberOfNodesExpanded());
         System.out.println("Maximum number of nodes in frontier " + DFSfrontier.maxNodes());

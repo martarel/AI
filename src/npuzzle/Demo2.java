@@ -21,23 +21,23 @@ public class Demo2 {
         NPuzzlePrinting printer = new NPuzzlePrinting();
 
 
-        NodeFunction aStarFunction = new AStarFunction(new MisplacedTilesHeuristic());
+        NodeFunction aStarFunction = new AStarFunction(new MisplacedTilesHeuristicFunction());
         BestFirstFrontier frontier = new BestFirstFrontier(aStarFunction);
         GraphSearch graphSearch = new GraphSearch(frontier);
         TreeSearch treeSearch = new TreeSearch(frontier);    
 
-        System.out.println("Running A* Tree Search...");
-        Node solution = treeSearch.findSolution(startNode, goalTest);
+        System.out.println("Running A* Graph Search...");
+        Node solution = graphSearch.findSolution(startNode, goalTest);
         //printer.printSolution(solution);
-        System.out.println("Number of nodes expanded " + treeSearch.numberOfNodesExpanded());
+        System.out.println("Number of nodes expanded " + graphSearch.numberOfNodesExpanded());
         System.out.println("Maximum number of nodes in frontier " + frontier.maxNodes());
 
         frontier.clear();
 
-        System.out.println("Running A* Graph Search...");
-        solution = graphSearch.findSolution(startNode, goalTest);
+        System.out.println("Running A* Tree Search...");
+        solution = treeSearch.findSolution(startNode, goalTest);
         //printer.printSolution(solution);
-        System.out.println("Number of nodes expanded " + graphSearch.numberOfNodesExpanded());
+        System.out.println("Number of nodes expanded " + treeSearch.numberOfNodesExpanded());
         System.out.println("Maximum number of nodes in frontier " + frontier.maxNodes());
     }
 }

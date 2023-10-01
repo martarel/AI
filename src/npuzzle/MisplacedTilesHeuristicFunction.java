@@ -4,10 +4,10 @@ import search.NodeFunction;
 import search.Node;
 import search.State;
 
-public class MisplacedTilesHeuristicFunction {
-    public static int value(Node node) {
+public class MisplacedTilesHeuristicFunction implements NodeFunction {
+    public int value(Node node) {
+        Tiles tiles = (Tiles) node.state;
         int misplacedTiles = 0;
-        State tiles = node.state;
         int width = tiles.getWidth();
         for (int r = 0; r < width; r++) {
             for (int c = 0; c < width; c++) {

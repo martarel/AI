@@ -1,10 +1,17 @@
 package search;
 
 import java.util.PriorityQueue;
+import java.util.Comparator;
 
+class NodeComparator implements Comparator<Node> {
+    @Override
+    public int compare(Node node1, Node node2) {
+        return Integer.compare(node1.cost, node2.cost);
+    }
+}
 
 public class BestFirstFrontier implements Frontier {
-    public PriorityQueue<Node> queue = new PriorityQueue<Node>();
+    private PriorityQueue<Node> queue = new PriorityQueue<Node>(new NodeComparator());
     private NodeFunction f;
     private int maxNodes = 0;
 
@@ -14,12 +21,13 @@ public class BestFirstFrontier implements Frontier {
 
     public void add(Node node) {
         node.cost = f.value(node);
+        System.out.println(node.cost);
         queue.add(node);
         maxNodes = Math.max(maxNodes, queue.size());
     }
 
     public Node remove() {
-        return queue.pop();
+        return queue.poll();
     }
 
     public boolean isEmpty() {
