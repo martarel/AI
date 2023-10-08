@@ -12,7 +12,7 @@ public class IterativeDeepeningTreeSearch {
             while (!frontier.isEmpty()) {
                 Node node = frontier.remove();
                 if (node.depth >= maxDepth) {
-                    break;
+                    continue;
                 }
                 if (goalTest.isGoal(node.state)) {
                     return node;
@@ -24,7 +24,6 @@ public class IterativeDeepeningTreeSearch {
                     }
                 }
             }
-            return null;
         }
         return null;
     }

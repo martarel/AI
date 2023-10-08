@@ -28,7 +28,7 @@ public class GraphSearch implements Search {
                     if (!visited.contains(newState)) {
                         nodesExpanded++;
                         visited.add(newState);
-                        frontier.add(new Node(node, action, newState));
+                        frontier.add(new Node(node, action, newState, node.depth + 1, node.cost + action.cost()));
                     }
                 }
             }

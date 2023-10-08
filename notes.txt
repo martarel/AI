@@ -1,3 +1,5 @@
+alias run=java -cp bin
+
 First Practical
 
 Results
@@ -17,6 +19,10 @@ Results
         Number of nodes expanded 19787
         Maximum number of nodes in frontier 14480
 
+        Iterative Deepening Search
+        Number of nodes expanded 1567125
+        Maximum number of nodes in frontier 27
+
     Tour
         BFS Tree Search
         Number of nodes expanded 31757
@@ -34,5 +40,27 @@ Results
         Maximum number of nodes in frontier 19
         
         Iterative Deepening Search
-        Number of nodes expanded 2
-        Maximum number of nodes in frontier 3
+        Number of nodes expanded 2651
+        Maximum number of nodes in frontier 25
+        
+Second practical
+
+Results
+    NPuzzle
+        Graph
+        Number of nodes expanded 224
+        Maximum number of nodes in frontier 91 
+
+        Tree
+        Number of nodes expanded 964
+        Maximum number of nodes in frontier 613
+
+
+    Tour
+        Graph
+        Number of nodes expanded 137
+        Maximum number of nodes in frontier 70
+        
+        Tree
+        Number of nodes expanded 239
+        Maximum number of nodes in frontier 145
